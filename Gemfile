@@ -34,6 +34,11 @@ gem 'jbuilder', '~> 2.5'
 #Use Bulma for styles
 gem "bulma-rails", "~> 0.7.1"
 
+#Use Devise for users authentication 
+gem 'devise'
+#Use Omniauth to integrate another authentication providers, like Twitter or Facebook
+gem 'omniauth'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
