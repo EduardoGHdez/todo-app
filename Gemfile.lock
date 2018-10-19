@@ -69,6 +69,9 @@ GEM
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    haml (5.0.4)
+      temple (>= 0.8.0)
+      tilt
     hashie (3.5.7)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
@@ -169,6 +172,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    temple (0.8.0)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -203,6 +207,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   devise
+  haml
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   omniauth
