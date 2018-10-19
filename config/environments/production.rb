@@ -24,8 +24,13 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
+<<<<<<< HEAD
   config.assets.js_compressor = Uglifier.new(harmony: true)
   #config.assets.js_compressor = :uglifier
+=======
+  #config.assets.js_compressor = :uglifier
+  config.assets.js_compressor = Uglifier.new(harmony: true)
+>>>>>>> 5d914567b4eb3bbdc874d0be315ce7b2a0e02ecd
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
