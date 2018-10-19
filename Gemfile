@@ -39,8 +39,14 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 
-#Use HAML as template system
+# Use HAML as template system
 gem 'haml'
+
+# Add font awesome
+gem "font-awesome-rails", ">=4.0.0"
+
+#Sorry
+gem 'jquery-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
