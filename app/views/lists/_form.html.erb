@@ -20,11 +20,14 @@
     <%= form.label :description %>
     <%= form.text_field :description, id: :list_description %>
   </div>
+  <input id="thing" type="hidden" value="<%= params[:user] %>" />
 
+  <!--
   <div class="field">
     <%= form.label :user_id %>
     <%= form.text_field :user_id, id: :list_user_id %>
   </div>
+  -->
 
   <div class="actions">
     <%= form.submit %>
