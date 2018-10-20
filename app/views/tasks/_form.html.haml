@@ -1,29 +1,35 @@
-= form_with(model: task, local: true) do |form|
-  - if task.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(task.errors.count, "error")
-        prohibited this task from being saved:
-      %ul
-        - task.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = form.label :title
-    = form.text_field :title, id: :task_title
-  .field
-    = form.label :description
-    = form.text_area :description, id: :task_description
-  .field
-    = form.label :due_date
-    = form.date_select :due_date, id: :task_due_date
-  .field
-    = form.label :priority
-    = form.text_field :priority, id: :task_priority
-  .field
-    = form.label :is_done
-    = form.check_box :is_done, id: :task_is_done   
-  .field
-    = form.label :list_id
-    = form.collection_select :list_id, @lists.order(:title), :id, :title, include_blank: true
-  .actions
-    = form.submit
+.container.is-widescreen
+  .section
+    = form_with(model: task, local: true) do |form|
+      - if task.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(task.errors.count, "error")
+            prohibited this task from being saved:
+          %ul
+            - task.errors.full_messages.each do |message|
+              %li= message
+      .field
+        .control
+          = form.label :list_id, class: "label "
+          .select.is-primary
+            = form.collection_select :list_id, @lists.order(:title), :id, :title, :required => true
+      .field
+        = form.label :title, class: "label"
+        = form.text_field :title, id: :task_title, class: "input is-primary"
+      .field
+        = form.label :description, class: "label"
+        = form.text_area :description, id: :task_description, class: "input is-primary"
+      .field
+        = form.label :due_date, class: "label"
+        .datepicker.input-group.date
+          = form.date_select :due_date, id: :task_due_date, class: "form-control"
+      .field
+        = form.label :priority, class: "label"
+        = form.text_field :priority, id: :task_priority, class: "input is-primary"
+      .field
+        = form.label :is_done, class: "label"
+        = form.check_box :is_done, id: :task_is_done   
+      .actions
+        = form.submit class: "button is-link is-fullwidth"
+        
