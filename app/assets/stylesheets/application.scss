@@ -17,9 +17,6 @@
 @import "bulma";
 @import "font-awesome";
 
-.container {
-  width: 30%;
-}
 .float{
   position:fixed;
   width:60px;
@@ -36,4 +33,8 @@
 }
 .float:hover{
   background-color:rgba(0, 204, 153, 0.787);
+}
+
+section{
+  margin: 20px;
 }

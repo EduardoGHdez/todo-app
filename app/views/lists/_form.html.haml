@@ -1,17 +1,18 @@
-.section
-  = form_with(model: list, local: true) do |form|
-    = form.hidden_field :user_id , :value => current_user.id
-    - if list.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(list.errors.count, "error")
-          prohibited this list from being saved:
-        %ul
-          - list.errors.full_messages.each do |message|
-            %li= message
-    .field
-      = form.label :title, class: "label"
-      = form.text_field :title, id: :list_title, class: "input"
-    .actions
-      = form.submit class: "button is-link is-fullwidth"
-      = link_to 'Cancel', lists_path, class: "button is-danger is-fullwidth"
+.container.is-widescreen
+  .section
+    = form_with(model: list, local: true) do |form|
+      = form.hidden_field :user_id , :value => current_user.id
+      - if list.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(list.errors.count, "error")
+            prohibited this list from being saved:
+          %ul
+            - list.errors.full_messages.each do |message|
+              %li= message
+      .field
+        = form.label :title, class: "label"
+        = form.text_field :title, id: :list_title, class: "input"
+      .actions.buttons
+        = form.submit class: "button is-link"
+        = link_to 'Cancel', lists_path, class: "button is-danger "
