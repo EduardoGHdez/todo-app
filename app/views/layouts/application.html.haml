@@ -29,10 +29,13 @@
                   .navbar-dropdown
                     %a.navbar-item{:href => "/users/edit"}
                       %i.fa.fa-edit
-                      Edit profile
+                      &nbspEdit profile
+                    %a.navbar-item{:href => "/export.pdf"}
+                      %i.fa.fa-file-pdf-o  
+                      &nbspExport as pdf
                     %a.navbar-item{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"}
                       %i.fa.fa-sign-out
-                      Sign out
+                      &nbspSign out
               - else
                 = link_to "Sign up", new_user_registration_path, class: "navbar-item button is-primary" 
                 = link_to "Log in", new_user_session_path, class: "navbar-item button is-light"     

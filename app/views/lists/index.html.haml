@@ -35,8 +35,8 @@
                 = link_to '', edit_task_path(task), class: "fa fa-edit button is-primary is-inverted"
               %td= delete_to_with_icon "", task, method: :delete, data: { confirm: "Are you sure?" }, class:  "fa fa-times button is-danger is-inverted"                             
   %br
-.section.container.is-centered.is-half
-  =link_to 'New list...', new_list_path, class:"button is-primary is-outlined is-fullwidth" 
+.section.container.has-text-centered.is-half
+  =link_to 'New list...', new_list_path, class:"button is-primary is-outlined is-large" 
 %footer.footer
   -if !(@lists.empty?)
     %a.float{:href => "/tasks/new"}
