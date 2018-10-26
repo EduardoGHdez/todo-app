@@ -1,0 +1,47 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %title TodoApp
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body.is-mobile
+    / START NAV
+    %nav.navbar
+      .container
+        .navbar-brand
+          %a.navbar-item.title{:href => "/", :style => "font-size:40px"}
+            To-do&nbsp
+            %span.fa.fa-gamepad
+          %span.navbar-burger.burger{"data-target" => "navbarMenu"}
+            %span
+            %span
+            %span
+        #navbarMenu.navbar-menu
+          .navbar-end
+            .buttons
+              - if user_signed_in?
+                .navbar-item.has-dropdown.is-hoverable
+                  %a.navbar-link
+                    = current_user.name
+                  .navbar-dropdown
+                    %a.navbar-item{:href => "/users/edit"}
+                      %i.fa.fa-edit
+                      &nbspEdit profile
+                    %a.navbar-item{:href => "/export.csv"}
+                      %i.fa.fa-file-o  
+                      &nbspExport as CSV
+                    %a.navbar-item{:href => "/export.pdf"}
+                      %i.fa.fa-file-pdf-o  
+                      &nbspExport as pdf
+                    %a.navbar-item{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"}
+                      %i.fa.fa-sign-out
+                      &nbspSign out
+              - else
+                = link_to "Sign up", new_user_registration_path, class: "navbar-item button is-primary" 
+                = link_to "Log in", new_user_session_path, class: "navbar-item button is-light"     
+    = yield
+
+

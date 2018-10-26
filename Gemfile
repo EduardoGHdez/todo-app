@@ -45,8 +45,11 @@ gem 'haml'
 # Add font awesome
 gem "font-awesome-rails", ">=4.0.0"
 
-#Sorry
+#JQuery
 gem 'jquery-rails'
+
+#Use Prawn to generat PDF's
+gem 'prawn-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
