@@ -13,4 +13,11 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0,20]
     end
   end
+
+  # Avatar uploader
+  mount_uploader :avatar, AvatarUploader
+
+  
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
 end

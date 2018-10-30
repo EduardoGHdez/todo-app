@@ -1,0 +1,19 @@
+* Devise and OmniAuth
+    * https://www.digitalocean.com/community/tutorials/how-to-configure-devise-and-omniauth-for-your-rails-application
+
+* Add attributes to models
+    rails g migration AddColumnsToUsers provider uid
+* Custom user devise
+    * https://gist.github.com/withoutwax/46a05861aa4750384df971b641170407
+* Dynamic Select (I used to make a dropdown list)
+    https://rubyplus.com/articles/3691-Dynamic-Select-Menus-in-Rails-5
+* How To: Add sign_in, sign_out, and sign_up links to your layout template
+    * https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
+
+
+
+Carrierwave
+
+- add carrierwave gem
+- validate integrity of avatar
+
