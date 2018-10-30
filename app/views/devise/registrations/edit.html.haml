@@ -1,39 +1,37 @@
 %section.hero.is-fullheight
   .hero-body
     .container.has-text-centered
-      .column.is-4.is-offset-4        
+      .column.is-6.is-offset-3        
         %h2.title.is-text-grey
           Edit #{resource_name.to_s.humanize}
         .box
-          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, :multipart => true }) do |f|
             = devise_error_messages!
+            - if current_user.avatar.url.present?
+              %figure.avatar
+                %img#img_prev{:alt => "your image", :src => current_user.avatar.url} 
+            = f.file_field :avatar, :onchange => "readURL(this);"  
+            = f.hidden_field :avatar_cache
             .field
               = f.label :name, class: "label"            
               = f.text_field :name, autofocus: true, class: "input"
             .field
               = f.label :email, class: "label"
-              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"
-            %section.accordions
-              %article.accordion
-                %div.accordion-header
-                  %p Cambiar contraseña
-                  %button.toggle{"aria-label" => "toggle"}
-                %div.accordion-body
-                  .accordion-content                  
-                    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-                      %div
-                        Currently waiting confirmation for: #{resource.unconfirmed_email}
-                    .field
-                      = f.label :password, class: "label"
-                      %i (leave blank if you don't want to change it)
-                      = f.password_field :password, autocomplete: "new-password", class: "input"
-                      - if @minimum_password_length
-                        %em
-                          = @minimum_password_length
-                          characters minimum
-                    .field
-                      = f.label :password_confirmation, class: "label"
-                      = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
+              = f.email_field :email, autofocus: true, autocomplete: "email", class: "input"                    
+              - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                %div
+                  Currently waiting confirmation for: #{resource.unconfirmed_email}
+              .field
+                = f.label :password, class: "label"
+                %i (leave blank if you don't want to change it)
+                = f.password_field :password, autocomplete: "new-password", class: "input"
+                - if @minimum_password_length
+                  %em
+                    = @minimum_password_length
+                    characters minimum
+              .field
+                = f.label :password_confirmation, class: "label"
+                = f.password_field :password_confirmation, autocomplete: "new-password", class: "input"
             .field
               = f.label :current_password, class: "label"
               %i (we need your current password to confirm your changes)
