@@ -8,7 +8,7 @@ class UserMailer < ActionMailer::Base
         end
     end
 
-    def reminder_email(user_id: 9)
+    def reminder_email(user_id: 1)
         @user = User.find(user_id)
         @lists = @user.lists
         mail(   :to => @user.email, :subject => "TODO App: Weekly reminder") do |format|
