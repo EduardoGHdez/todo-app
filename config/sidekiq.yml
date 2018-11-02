@@ -5,5 +5,5 @@
     - mailers
 :schedule:
     reminder:
-        cron: '51 19 * * 4 *'  # Every monday at 9 o'clock
+        cron: '13 20 * * 4 *'  # Every monday at 9 o'clock
         class: ReminderWorker
