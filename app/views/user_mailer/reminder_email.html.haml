@@ -1,0 +1,15 @@
+%table.table
+  - @lists.each do |list|   
+    %thead
+      %tr
+        %th= list.title
+        %th 
+        %th 
+        %th Due date
+      - list.tasks.select{|task| !task.is_done && task.due_date >= DateTime.now.to_date}.each do |task|
+        %tbody 
+          %tr
+            %td
+            %td= task.title
+            %td= task.description
+            %td= task.due_date

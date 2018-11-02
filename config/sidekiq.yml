@@ -1,0 +1,9 @@
+:concurrency: 5
+:logfile: ./log/sidekiq.log
+:queues:
+    - default
+    - mailers
+:schedule:
+    reminder:
+        cron: '13 20 * * 4 *'  # Every monday at 9 o'clock
+        class: ReminderWorker

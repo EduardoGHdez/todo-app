@@ -57,6 +57,11 @@ gem 'carrierwave', '~> 1.0'
 #Use Miniagick 
 gem "mini_magick"
 
+# Use Sidekiq and Redis to create an asyn process. In this case -> a mailer
+gem 'redis-rails'
+gem 'sidekiq'
+gem 'sidekiq-scheduler'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
