@@ -58,12 +58,22 @@ gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+    gem 'dotenv-rails'
+    gem 'factory_bot_rails'
+    gem 'pry-rails'
+    gem 'rspec-rails'
+ end
+ 
+group :test do
+    gem 'faker'
+    gem 'capybara'
+    gem 'database_cleaner'
+    gem 'rspec_junit_formatter'
+    gem 'shoulda-matchers', '~> 3.1'
+    gem 'simplecov'
+    gem 'webmock'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
