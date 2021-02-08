@@ -52,7 +52,7 @@ gem 'jquery-rails'
 gem 'prawn-rails'
 
 #Use Carrierwave to upload files
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 
 #Use Miniagick 
 gem "mini_magick"
